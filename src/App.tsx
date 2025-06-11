@@ -9,7 +9,7 @@ function App() {
 					<img src={reactLogo} className="logo react" alt="React logo" />
 				</a>
 			</div>
-			<h1>Rspack + React + TypeScript</h1>
+			<h1>MFE - 1</h1>
 			<div className="card">
 				<Button />
 			</div>
