@@ -13,15 +13,15 @@ export default withZephyr()({
   entry: {
     main: "./src/index.tsx",
   },
-   output: {
-    publicPath: 'http://localhost:3000/',
+  output: {
+    publicPath: "http://localhost:3000/",
   },
   resolve: {
     extensions: ["...", ".ts", ".tsx", ".jsx"],
   },
   devServer: {
     host: "localhost",
-    port: 3001,
+    port: 3000,
     open: true,
   },
   module: {
@@ -60,17 +60,16 @@ export default withZephyr()({
     new ModuleFederationPlugin({
       name: "host",
       remotes: {
-        remoteApp: 'remoteApp@http://localhost:3001/remoteEntry.js',
+        remote: "remote@http://localhost:3001/remoteEntry.js",
       },
-      filename: "remoteEntry.js",
       shared: {
         react: { singleton: true },
-        'react-dom': { singleton: true },
+        "react-dom": { singleton: true },
       },
     }),
     new rspack.HtmlRspackPlugin({
       template: "./index.html",
-    }), 
+    }),
     // @ts-expect-error
     isDev ? new RefreshPlugin() : null,
   ].filter(Boolean),
